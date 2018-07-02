@@ -9,6 +9,9 @@ test-paths: ["tests"]
 data-paths: ["data"]
 macro-paths: ["macros"]
 
+quoting:
+  identifier: false
+
 target-path: "target"
 clean-targets:
     - "target"

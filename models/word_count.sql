@@ -1,7 +1,7 @@
 {{config(materialized='table')}}
 
 with
-  moby_dick as (select * from {{ref('moby_dick')}})
+  moby_dick as (select * from {{ref('moby_dick_base')}})
 , words as (
   select
 
