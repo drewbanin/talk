@@ -5,12 +5,12 @@ with
 , words as (
   select
 
-    word.value::string as word,
+    word,
     count(*) as ct
 
   from moby_dick,
 
-  lateral flatten (input => split(moby_dick.body, ' ')) word
+  unnest(string_to_array(moby_dick.body, ' ')) word
 
   group by 1
 
