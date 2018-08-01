@@ -6,7 +6,7 @@ with
   select
 
     word.value::string as word,
-    count(*) as ct
+    count(*) as count_of_words
 
   from moby_dick,
 
