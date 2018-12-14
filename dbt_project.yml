@@ -1,7 +1,7 @@
 name: 'talk'
 version: '1.0'
 
-profile: 'talk'
+profile: 'default'
 
 source-paths: ["models"]
 analysis-paths: ["analysis"]
@@ -19,4 +19,4 @@ clean-targets:
 
 models:
   talk:
-    materialized: view
+    materialized: table
