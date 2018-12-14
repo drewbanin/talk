@@ -33,9 +33,9 @@
 
     {% set lines = get_lines(limit=var('limit', 100)) %}
 
-    {%- for line_chunk in lines|batch(10) %}
+    {%- for line in lines %}
         {% set text = line_chunk | join("\n") %}
-        {{ log_it(text) }}
+        {{ log_it(text, 5) }}
     {% endfor %}
 
 {% endmacro %}
