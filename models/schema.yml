@@ -1,0 +1,31 @@
+version: 2
+
+# hacks on hacks on hacks
+
+sources:
+  - name: literature
+    loader: authors
+    schema: analytics
+    database: dbt
+
+    tables:
+      - name: moby_dick
+        identifier: source
+        loaded_at_field: loaded_at
+        freshness:
+          warn_after: {count: 1, period: minute}
+          error_after: {count: 15, period: minute}
+
+      - name: old_man_and_the_sea
+        identifier: source
+        loaded_at_field: loaded_at
+        freshness:
+          warn_after: {count: 1, period: hour}
+          error_after: {count: 2, period: hour}
+
+      - name: paris_france
+        identifier: source
+        loaded_at_field: loaded_at
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 24, period: hour}
