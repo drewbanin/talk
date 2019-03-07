@@ -6,7 +6,7 @@ sources:
   - name: literature
     loader: authors
     schema: analytics
-    database: dbt
+    database: analytics
 
     tables:
       - name: moby_dick

@@ -1,0 +1,325 @@
+version: 2
+
+sources:
+  - name: close_io
+    loader: stitch
+    schema: close
+    loaded_at_field: loaded_at
+
+    freshness:
+      warn_after: {count: 5, period: minute}
+      error_after: {count: 15, period: minute}
+
+    tables:
+      - name: leads__contacts__integration_links
+        identifier: source
+
+      - name: _sdc_rejected
+        identifier: source
+
+      - name: leads__custom_fields
+        identifier: source
+
+      - name: custom_fields
+        identifier: source
+
+      - name: users
+        identifier: source
+
+      - name: leads__contacts__emails
+        identifier: source
+
+      - name: custom_fields__choices
+        identifier: source
+
+      - name: custom_fields__editable_with_roles
+        identifier: source
+
+      - name: activities__envelope__reply_to
+        identifier: source
+
+      - name: event_log__changed_fields
+        identifier: source
+
+      - name: activities__envelope__sender
+        identifier: source
+
+      - name: activities__message_ids
+        identifier: source
+
+      - name: activities__envelope__bcc
+        identifier: source
+
+      - name: activities__body_text_quoted
+        identifier: source
+
+      - name: users__organizations
+        identifier: source
+
+      - name: activities__envelope__from
+        identifier: source
+
+      - name: activities__to
+        identifier: source
+
+      - name: activities__attachments
+        identifier: source
+
+      - name: activities__envelope__cc
+        identifier: source
+
+      - name: activities__body_html_quoted
+        identifier: source
+
+      - name: activities__cc
+        identifier: source
+
+      - name: activities__envelope__to
+        identifier: source
+
+      - name: activities__references
+        identifier: source
+
+      - name: activities__bcc
+        identifier: source
+
+      - name: activities__opens
+        identifier: source
+
+      - name: leads__contacts
+        identifier: source
+
+      - name: tasks
+        identifier: source
+
+      - name: leads
+        identifier: source
+
+      - name: leads__tasks
+        identifier: source
+
+      - name: leads__integration_links
+        identifier: source
+
+      - name: event_log
+        identifier: source
+
+      - name: leads__opportunities
+        identifier: source
+
+      - name: activities
+        identifier: source
+
+  - name: github
+    loader: fivetran
+    schema: analytics
+    loaded_at_field: loaded_at
+
+    freshness:
+      warn_after: {count: 5, period: minute}
+      error_after: {count: 15, period: minute}
+
+    tables:
+      - name: issue_renamed
+        identifier: source
+
+      - name: commit_parent
+        identifier: source
+
+      - name: issue_merged
+        identifier: source
+
+      - name: user_email
+        identifier: source
+
+      - name: issue_label_history
+        identifier: source
+
+      - name: issue_referenced
+        identifier: source
+
+      - name: issue_comment
+        identifier: source
+
+      - name: issue_assignee_history
+        identifier: source
+
+      - name: issue_closed_history
+        identifier: source
+
+      - name: issue_assignee
+        identifier: source
+
+      - name: issue_label
+        identifier: source
+
+      - name: issue_milestone_history
+        identifier: source
+
+      - name: issue_mention
+        identifier: source
+
+      - name: fivetran_audit
+        identifier: source
+
+      - name: commit_file
+        identifier: source
+
+      - name: milestone
+        identifier: source
+
+      - name: pull_request
+        identifier: source
+
+      - name: requested_reviewer_history
+        identifier: source
+
+      - name: repository
+        identifier: source
+
+      - name: user
+        identifier: source
+
+      - name: pull_request_review_dismissed
+        identifier: source
+
+      - name: commit
+        identifier: source
+
+      - name: issue
+        identifier: source
+
+      - name: pull_request_review
+        identifier: source
+
+  - name: google_sheets
+    loader: stitch
+    schema: analytics
+    loaded_at_field: loaded_at
+
+    freshness:
+      warn_after: {count: 5, period: minute}
+      error_after: {count: 15, period: minute}
+
+    tables:
+      - name: estimates
+        identifier: source
+
+      - name: sprints
+        identifier: source
+
+  - name: quickbooks
+    loader: stitch
+    schema: analytics
+    loaded_at_field: loaded_at
+    tables:
+      - name: quickbooks_transfers
+        identifier: source
+
+      - name: quickbooks_vendors
+        identifier: source
+
+      - name: quickbooks_deposits
+        identifier: source
+
+      - name: quickbooks_employees
+        identifier: source
+
+      - name: quickbooks_deposits__line__linkedtxn
+        identifier: source
+
+      - name: quickbooks_invoices__linkedtxn
+        identifier: source
+
+      - name: quickbooks_journalentries
+        identifier: source
+
+      - name: quickbooks_purchases__purchaseex__any
+        identifier: source
+
+      - name: quickbooks_billpayments__line
+        identifier: source
+
+      - name: quickbooks_billpayments__line__linkedtxn
+        identifier: source
+
+      - name: quickbooks_paymentmethods
+        identifier: source
+
+      - name: quickbooks_terms
+        identifier: source
+
+      - name: quickbooks_payments__line
+        identifier: source
+
+      - name: quickbooks_bills__linkedtxn
+        identifier: source
+
+      - name: quickbooks_payments__line__lineex__any
+        identifier: source
+
+      - name: quickbooks_payments__line__linkedtxn
+        identifier: source
+
+      - name: quickbooks_accounts
+        identifier: source
+
+      - name: quickbooks_bills
+        identifier: source
+
+      - name: quickbooks_billpayments
+        identifier: source
+
+      - name: quickbooks_invoices
+        identifier: source
+
+      - name: quickbooks_payments__linkedtxn
+        identifier: source
+
+      - name: quickbooks_bills__line
+        identifier: source
+
+      - name: quickbooks_creditmemos
+        identifier: source
+
+      - name: quickbooks_creditmemos__line
+        identifier: source
+
+      - name: quickbooks_purchases
+        identifier: source
+
+      - name: quickbooks_payments
+        identifier: source
+
+      - name: quickbooks_items
+        identifier: source
+
+      - name: quickbooks_classes
+        identifier: source
+
+      - name: quickbooks_journalentries__line
+        identifier: source
+
+      - name: quickbooks_purchases__line
+        identifier: source
+
+      - name: quickbooks_invoices__line
+        identifier: source
+
+      - name: quickbooks_deposits__line
+        identifier: source
+
+      - name: quickbooks_customers
+        identifier: source
+
+      - name: submit_form
+        identifier: source
+
+      - name: link_click
+        identifier: source
+
+      - name: web_page
+        identifier: source
+
+      - name: event
+        identifier: source
