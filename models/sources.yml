@@ -3,8 +3,10 @@ version: 2
 sources:
   - name: close_io
     loader: stitch
-    schema: close
     loaded_at_field: loaded_at
+
+    database: analytics
+    schema: analytics
 
     freshness:
       warn_after: {count: 5, period: minute}
@@ -112,8 +114,10 @@ sources:
 
   - name: github
     loader: fivetran
-    schema: analytics
     loaded_at_field: loaded_at
+
+    database: analytics
+    schema: analytics
 
     freshness:
       warn_after: {count: 5, period: minute}
@@ -194,12 +198,13 @@ sources:
 
   - name: google_sheets
     loader: stitch
-    schema: analytics
     loaded_at_field: loaded_at
+    database: analytics
+    schema: analytics
 
     freshness:
-      warn_after: {count: 5, period: minute}
-      error_after: {count: 15, period: minute}
+      warn_after: {count: 30, period: minute}
+      error_after: {count: 60, period: minute}
 
     tables:
       - name: estimates
@@ -210,8 +215,16 @@ sources:
 
   - name: quickbooks
     loader: stitch
-    schema: analytics
     loaded_at_field: loaded_at
+
+    database: analytics
+    schema: analytics
+
+    freshness:
+      warn_after: {count: 1, period: minute}
+      error_after: {count: 15, period: minute}
+
+
     tables:
       - name: quickbooks_transfers
         identifier: source
