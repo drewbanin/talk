@@ -5,7 +5,7 @@ sources:
     loader: stitch
     loaded_at_field: loaded_at
 
-    database: analytics
+    database: dbt
     schema: analytics
 
     freshness:
@@ -116,7 +116,7 @@ sources:
     loader: fivetran
     loaded_at_field: loaded_at
 
-    database: analytics
+    database: dbt
     schema: analytics
 
     freshness:
@@ -199,7 +199,7 @@ sources:
   - name: google_sheets
     loader: stitch
     loaded_at_field: loaded_at
-    database: analytics
+    database: dbt
     schema: analytics
 
     freshness:
@@ -217,7 +217,7 @@ sources:
     loader: stitch
     loaded_at_field: loaded_at
 
-    database: analytics
+    database: dbt
     schema: analytics
 
     freshness:
