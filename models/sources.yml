@@ -198,19 +198,25 @@ sources:
 
   - name: google_sheets
     loader: stitch
-    loaded_at_field: loaded_at
     database: dbt
     schema: analytics
-
-    freshness:
-      warn_after: {count: 30, period: minute}
-      error_after: {count: 60, period: minute}
 
     tables:
       - name: estimates
         identifier: source
+        loaded_at_field: loaded_at
+        freshness:
+          warn_after: {count: 30, period: minute}
+          error_after: {count: 60, period: minute}
 
       - name: sprints
+        identifier: source
+        loaded_at_field: loaded_at
+        freshness:
+          warn_after: {count: 30, period: minute}
+          error_after: {count: 60, period: minute}
+
+      - name: my_other_source
         identifier: source
 
   - name: quickbooks
