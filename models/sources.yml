@@ -219,6 +219,21 @@ sources:
       - name: my_other_source
         identifier: source
 
+  - name: untagged
+    loader: stitch
+    database: dbt
+    schema: analytics
+
+    tables:
+      - name: tbl_1
+        identifier: source
+
+      - name: tbl_2
+        identifier: source
+
+      - name: tbl_3
+        identifier: source
+
   - name: quickbooks
     loader: stitch
     loaded_at_field: loaded_at
