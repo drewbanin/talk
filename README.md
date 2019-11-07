@@ -1,0 +1,1 @@
+emacs is for squares
