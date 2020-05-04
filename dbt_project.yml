@@ -20,3 +20,6 @@ clean-targets:
 models:
   talk:
     materialized: table
+
+
+
