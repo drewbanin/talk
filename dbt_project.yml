@@ -1,6 +1,9 @@
 name: 'talk'
 version: '1.0'
 
+
+# this is an addition
+
 profile: 'default'
 
 source-paths: ["models"]
