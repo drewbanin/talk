@@ -19,7 +19,7 @@ clean-targets:
 
 models:
   talk:
-    materialized: table
+    materialized: view
 
 
 
