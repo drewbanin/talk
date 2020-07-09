@@ -1,2 +1,2 @@
-emacs is for squares
+vscode is for squares
 truly
