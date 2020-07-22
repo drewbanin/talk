@@ -9,3 +9,4 @@ select
     now() - (interval '1 minute' * i) as loaded_at
 
 from gen
+-- a comment

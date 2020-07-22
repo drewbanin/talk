@@ -1,6 +1,7 @@
 version: 2
 
 # hacks on hacks on hacks
+# a comment
 
 sources:
   - name: literature
